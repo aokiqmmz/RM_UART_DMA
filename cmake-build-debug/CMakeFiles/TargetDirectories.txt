@@ -1,0 +1,3 @@
+D:/CLionProjects/USART/cmake-build-debug/CMakeFiles/USART.elf.dir
+D:/CLionProjects/USART/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/CLionProjects/USART/cmake-build-debug/CMakeFiles/rebuild_cache.dir
