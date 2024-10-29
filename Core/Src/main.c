@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "dma.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -33,7 +34,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-char message[1];
+uint8_t rcvBuff[BUF_SIZE];
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -87,10 +88,13 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_UART8_Init();
   /* USER CODE BEGIN 2 */
 
-HAL_UART_Receive_IT(&huart8, (uint8_t *)message, sizeof(message));
+  __HAL_UART_ENABLE_IT(&huart8, UART_IT_IDLE);
+  HAL_UART_Receive_DMA(&huart8, rcvBuff, BUF_SIZE);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */

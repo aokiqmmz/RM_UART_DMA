@@ -3,6 +3,7 @@
 "usart\callback.o"
 "usart\main.o"
 "usart\gpio.o"
+"usart\dma.o"
 "usart\usart.o"
 "usart\stm32f4xx_it.o"
 "usart\stm32f4xx_hal_msp.o"
