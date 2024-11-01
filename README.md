@@ -1,1 +1,1 @@
- This program does not use DMA and can only send two characters, which needs to be modified.
+ Sending characters beyond bufsize will result in garbled text. Why does this happen? I still don’t understand.
