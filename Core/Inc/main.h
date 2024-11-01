@@ -59,7 +59,7 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 
 /* USER CODE BEGIN Private defines */
-#define BUF_SIZE 10
+#define BUF_SIZE 4
 
 /* USER CODE END Private defines */
 

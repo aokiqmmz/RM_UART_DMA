@@ -92,8 +92,7 @@ int main(void)
   MX_UART8_Init();
   /* USER CODE BEGIN 2 */
 
-  __HAL_UART_ENABLE_IT(&huart8, UART_IT_IDLE);
-  HAL_UART_Receive_DMA(&huart8, rcvBuff, BUF_SIZE);
+  HAL_UARTEx_ReceiveToIdle_DMA(&huart8, &rcvBuff[0], BUF_SIZE);
 
   /* USER CODE END 2 */
 

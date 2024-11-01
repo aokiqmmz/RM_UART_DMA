@@ -10,9 +10,9 @@
 
 extern uint8_t rcvBuff[BUF_SIZE];
 
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){
     if (huart->Instance == UART8) {
         HAL_UART_Transmit_DMA(&huart8, rcvBuff, BUF_SIZE);
-        HAL_UART_Receive_DMA(&huart8, rcvBuff, BUF_SIZE);
+        HAL_UARTEx_ReceiveToIdle_DMA(&huart8, &rcvBuff[0], BUF_SIZE);
     }
 }
